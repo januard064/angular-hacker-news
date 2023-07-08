@@ -1,0 +1,18 @@
+.header{
+    width: 100%;
+    background-color: #FFFFFF;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px 0px #4F617B1A;
+}
+
+.title{
+    font-size: 18px;
+    color: #000000;
+    font-family: "Inter";
+    font-weight: 700;
+    margin-left: 13px;
+}
