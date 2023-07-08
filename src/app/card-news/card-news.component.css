@@ -4,6 +4,8 @@
     background: #FFFFFF;
     box-shadow: 0px 2px 6px 0px #4F617B14;
     padding: 18px;
+    border-color: none;
+    border-width: 0;
 }
 
 .title {
@@ -37,7 +39,8 @@
 
 }
 
-.timeComment {
+
+.time-comment {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -46,14 +49,33 @@
     color: #808080;
 }
 
+.comment-chip{
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    background: #FFEADC;
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: #FF6600;
+    font-weight: 600;
+}
 
-.flexStart {
+.trending-chip{
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: #FF8780;
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.flex-start {
     align-items: center;
     display: flex;
     justify-content: start;
 }
 
-.flexSpaceBetween {
+.flex-space-between {
     align-items: center;
     display: flex;
     justify-content: space-between;
