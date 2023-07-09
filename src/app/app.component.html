@@ -1,6 +1,19 @@
 <app-header></app-header>
 
-<app-card-news></app-card-news>
+<!-- <app-card-news [askStoryItems]="storyItems"></app-card-news> -->
+
+<div class="app-container">
+  <div class="app-content">
+    <div class="row">
+      <div *ngFor="let item of storyItems" class="col-sm-6">
+        <div style="margin-top: 8px;">
+          <app-card-news [storyItem]="item"></app-card-news>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <router-outlet></router-outlet>
