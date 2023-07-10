@@ -26,24 +26,25 @@ export class CardNewsComponent {
 
   comments: any[] = []
 
+  isLoading: boolean = false
+  isError: boolean = false
+  itemListSkeleton: any[] = [0, 1, 2]
+
+
   constructor(private _hackerCommentService: NewsServiceService) {
     this.storyItem = {}
-    // console.log(this.storyItem)
-
-  }
-
-  ngOnInit() {
-    console.log('storyId', this.commentsId)
-    // this.fetchCommentDatas()
   }
 
   fetchCommentDatas(commentId: number) {
+    this.isLoading = true
     this._hackerCommentService.getStoriesItem(commentId).subscribe((comments) => {
-      console.log('comments', comments)
       this.comments.push(comments)
+
+      this.isLoading = false
     },
       (error) => {
         console.log('Error to fetch asks item', error)
+        this.isError = true
       }
     )
   }
@@ -53,7 +54,7 @@ export class CardNewsComponent {
     if (modalDiv != null) {
       modalDiv.style.display = 'block'
     }
-    for( const commentId of this.commentsId ){
+    for (const commentId of this.commentsId) {
       this.fetchCommentDatas(commentId)
     }
   }

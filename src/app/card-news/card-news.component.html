@@ -59,13 +59,30 @@
             </div>
 
             <div class="modal-body">
-                <div *ngIf="comments">
-                    <!-- Render the component or display the data here -->
+                <div *ngIf="isError">
+                    <div></div>
+                </div>
 
+                <div *ngIf="isLoading;  else commentList">
+                    <div *ngFor="let skeleton of itemListSkeleton">
+                        <div style="margin-top: 16px;">
+                            <div class="list-skeleton">
+                                <div class="list-skeleton-item animate-pulse"></div>
+                                <div class="list-skeleton-item animate-pulse" style="margin-top: 8px;"></div>
+                                <div class="list-skeleton-item animate-pulse"></div>
+                                <div class="list-skeleton-item animate-pulse" style="width: 60%;"></div>
+                            </div>
+                            <div class="list-skeleton-item animate-pulse" style="width: 20%; margin-left: 16px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #commentList>
                     <div *ngFor="let comment of comments">
                         <app-comment-list [comment]="comment"></app-comment-list>
                     </div>
-                </div>
+                </ng-template>
+
+
             </div>
 
         </div>
