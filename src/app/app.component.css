@@ -2,10 +2,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 30px;
 }
 
 .app-content {
-    width: 1000px;
+    width: 992px;
 }
 
 .card-skeleton {

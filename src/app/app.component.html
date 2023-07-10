@@ -7,7 +7,7 @@
       <div></div>
     </div>
 
-    <div *ngIf="isLoading;  else newsContent" style="margin-top: 18px;">
+    <div *ngIf="isLoading;  else newsContent" style="margin-top: 15px;">
       <div class="row">
         <div *ngFor="let skeleton  of storyItemsSkeleton" class="col-sm-6">
 
@@ -49,7 +49,7 @@
     </div>
 
     <ng-template #newsContent>
-      <div class="row">
+      <div class="row" style="margin-top: 15px;">
         <div *ngFor="let item of storyItems; let i = index" class="col-sm-6">
           <div style="margin-top: 8px;">
             <app-card-news [storyItem]="item" [commentsId]="item.kids" [dataIndex]="i"></app-card-news>
