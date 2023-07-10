@@ -22,29 +22,51 @@
             <div *ngIf="storyItem.kids">{{storyItem.kids.length}} comments </div>
             <i class="bi bi-arrow-right" style="font-size: 1rem; margin-left: 6px;"></i>
         </div>
+
     </div>
 </div>
 
-<div class="modal" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div class="modal" id={{storyItem.id}}>
+    <div class="modal-dialog modal-lg">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content modal-contents-container">
+            <div class="modal-headers">
+                <div class="modal-close" (click)="closeModal()">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="news-title">
+                    {{storyItem.title}}
+                </div>
+                <div class="news-detail">
+                    <div class="news-detail-content">
+                        <div>{{storyItem.score}} points by {{storyItem.by}}</div>
+                        <div class="separator">|</div>
+
+                        <div class="flex-start">
+                            <i class="bi bi-clock" style="font-size: 1rem; margin-right: 6px;"></i>
+                            <div>4 hours ago</div>
+                        </div>
+                    </div>
+                    <div *ngIf="storyItem.kids" class="news-comment">
+                        <i class="bi bi-chat-dots" style="font-size: 1rem; margin-right: 6px;"></i>
+                        <div *ngIf="storyItem.kids">{{storyItem.kids.length}} comments</div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Modal body -->
+            <div class="divider-container">
+                <hr class="divider" />
+            </div>
+
             <div class="modal-body">
-                Modal body..
-            </div>
+                <div *ngIf="comments">
+                    <!-- Render the component or display the data here -->
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button (click)="closeModal()" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <div *ngFor="let comment of comments">
+                        <app-comment-list [comment]="comment"></app-comment-list>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 </div>

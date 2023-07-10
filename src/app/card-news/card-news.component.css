@@ -50,7 +50,7 @@
     color: #808080;
 }
 
-.comment-chip{
+.comment-chip {
     align-items: center;
     display: flex;
     justify-content: start;
@@ -61,7 +61,7 @@
     font-weight: 600;
 }
 
-.trending-chip{
+.trending-chip {
     padding: 2px 10px;
     border-radius: 4px;
     background: #FF8780;
@@ -80,4 +80,74 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+.modal {
+    background: rgba(79, 97, 123, 0.5);
+
+}
+
+.modal-dialog {
+    margin-top: 140px;
+}
+
+.modal-close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 12px;
+}
+
+.modal-headers {
+    padding-left: 30px;
+    padding-top: 7px;
+
+}
+
+.modal-contents-container {
+    height: 592px;
+    padding-bottom: 30px;
+}
+
+
+.news-title {
+    font-size: 16px;
+    color: #242424;
+    /* font-family: 'Inter'; */
+    font-weight: 700;
+    /* height: 40px; */
+}
+
+.news-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.news-detail-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    color: #8B8B8B;
+}
+
+.news-comment {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #242424;
+}
+
+.divider-container{
+    padding: 0px 30px;
+}
+
+.modal-body {
+    padding: 0px 30px 30px 30px;
+    height: 500px;
+    overflow-x: scroll;
 }

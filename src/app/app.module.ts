@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CardNewsComponent } from './card-news/card-news.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CardNewsComponent
+    CardNewsComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
