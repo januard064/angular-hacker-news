@@ -1,0 +1,27 @@
+.comment-list-container {}
+
+.comment-list-content {
+    background-color: #F4F4F4;
+    padding: 10px 16px 10px 16px;
+    border-radius: 6px;
+    color: #242424;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.comment-title {
+    font-weight: 700;
+}
+
+.comment-text {
+    font-weight: 400;
+    margin-top: 6px;
+}
+
+.comment-time{
+    color: #242424;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-left: 16px;
+    font-weight: 400;
+}
