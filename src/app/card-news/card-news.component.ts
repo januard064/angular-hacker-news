@@ -22,6 +22,7 @@ interface IStoryItem {
 export class CardNewsComponent {
   @Input() storyItem: any
   @Input() commentsId: any
+  @Input() dataIndex: number = 0
 
   comments: any[] = []
 

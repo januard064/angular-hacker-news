@@ -11,6 +11,10 @@ export class AppComponent {
   title = 'assessment-januard';
 
   storyItems: any[] = [];
+  isLoading: boolean = true;
+  isError: boolean = false
+
+  storyItemsSkeleton: any[] = [0, 1, 2, 3, 4, 5]
 
   constructor(private _hackerNewsService: NewsServiceService) {
     // this.fetchTopStories();
@@ -19,13 +23,14 @@ export class AppComponent {
 
   fetchAskStoryId() {
     this._hackerNewsService.getAskStoriesId().subscribe((storyIds) => {
-      for (const storyId of  this.getTwentyItems(storyIds)) {
-        console.log(storyId)
+      for (const storyId of this.getTwentyItems(storyIds)) {
         this.fetchAskStoryItem(storyId)
       }
     },
       (error) => {
         console.log('Error to fetch asks story ids', error)
+        this.isLoading = false
+        this.isError = true
       }
     )
   }
@@ -33,15 +38,20 @@ export class AppComponent {
   fetchAskStoryItem(storyId: number) {
     this._hackerNewsService.getStoriesItem(storyId).subscribe((items) => {
       this.storyItems.push(items)
+
+      this.isLoading = false
+
     },
       (error) => {
         console.log('Error to fetch asks item', error)
+        this.isLoading = false
+        this.isError = true
       }
     )
   }
 
-  getTwentyItems(arrayOfItem: any[]){
-    return arrayOfItem.slice(0,20)
+  getTwentyItems(arrayOfItem: any[]) {
+    return arrayOfItem.slice(0, 20)
   }
 
 }

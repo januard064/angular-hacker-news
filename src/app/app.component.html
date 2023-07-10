@@ -1,16 +1,62 @@
 <app-header></app-header>
 
-<!-- <app-card-news [askStoryItems]="storyItems"></app-card-news> -->
-
 <div class="app-container">
   <div class="app-content">
-    <div class="row">
-      <div *ngFor="let item of storyItems" class="col-sm-6">
-        <div style="margin-top: 8px;">
-          <app-card-news [storyItem]="item" [commentsId]="item.kids"></app-card-news>
+
+    <div *ngIf="isError">
+      <div></div>
+    </div>
+
+    <div *ngIf="isLoading;  else newsContent" style="margin-top: 18px;">
+      <div class="row">
+        <div *ngFor="let skeleton  of storyItemsSkeleton" class="col-sm-6">
+
+          <div class="card-skeleton">
+            <div class="card-skeleton-content p-3">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card-skeleton-item animate-pulse"></div>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-3">
+                  <div class="card-skeleton-item animate-pulse"></div>
+                </div>
+                <div class="col-9">
+                  <div class="card-skeleton-item animate-pulse"></div>
+                </div>
+              </div>
+
+              <hr class="divider" />
+
+              <div class="row mt-3">
+                <div class="col-3">
+                  <div class="card-skeleton-item animate-pulse"></div>
+                </div>
+                <div class="col-6">
+                  <div></div>
+                </div>
+                <div class="col-3">
+                  <div class="card-skeleton-item animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+
+    <ng-template #newsContent>
+      <div class="row">
+        <div *ngFor="let item of storyItems; let i = index" class="col-sm-6">
+          <div style="margin-top: 8px;">
+            <app-card-news [storyItem]="item" [commentsId]="item.kids" [dataIndex]="i"></app-card-news>
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>
 
