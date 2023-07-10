@@ -4,7 +4,7 @@
     <div class="point">
         <div>{{storyItem.score}} points by {{storyItem.by}}</div>
         <div class="separator">|</div>
-        <!-- <div>id</div> -->
+        <div>hacker-news.firebaseio.com</div>
     </div>
 
     <hr class="divider" />
@@ -12,13 +12,13 @@
     <div class="time-comment">
         <div class="flex-start">
             <div class="flex-start">
-                <i class="bi bi-clock" style="font-size: 1rem; margin-right: 6px;"></i>
-                <div>4 hours ago</div>
+                <i class="bi bi-clock icon"></i>
+                <div>{{storyItem.time | date : "medium"}}</div>
             </div>
             <div class="trending-chip">{{storyItem.type}}</div>
         </div>
         <div *ngIf="storyItem.kids" class="comment-chip" (click)="openModal()">
-            <i class="bi bi-chat-dots" style="font-size: 1rem; margin-right: 6px;"></i>
+            <i class="bi bi-chat-dots icon"></i>
             <div *ngIf="storyItem.kids">{{storyItem.kids.length}} comments </div>
             <i class="bi bi-arrow-right" style="font-size: 1rem; margin-left: 6px;"></i>
         </div>
@@ -41,14 +41,15 @@
                     <div class="news-detail-content">
                         <div>{{storyItem.score}} points by {{storyItem.by}}</div>
                         <div class="separator">|</div>
-
+                        <div>hacker-news.firebaseio.com</div>
+                        <div class="separator">|</div>
                         <div class="flex-start">
-                            <i class="bi bi-clock" style="font-size: 1rem; margin-right: 6px;"></i>
-                            <div>4 hours ago</div>
+                            <i class="bi bi-clock icon"></i>
+                            <div>{{storyItem.time | date : "medium"}}</div>
                         </div>
                     </div>
                     <div *ngIf="storyItem.kids" class="news-comment">
-                        <i class="bi bi-chat-dots" style="font-size: 1rem; margin-right: 6px;"></i>
+                        <i class="bi bi-chat-dots icon"></i>
                         <div *ngIf="storyItem.kids">{{storyItem.kids.length}} comments</div>
                     </div>
                 </div>

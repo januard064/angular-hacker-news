@@ -71,6 +71,12 @@
     margin-left: 16px;
 }
 
+.icon{
+    font-size: 14px;
+    margin-right: 6px;
+    
+}
+
 .flex-start {
     align-items: center;
     display: flex;
