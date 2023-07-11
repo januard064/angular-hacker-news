@@ -1,12 +1,14 @@
 .card {
     width: 496px;
-    /* height: 148px; */
     background: #FFFFFF;
     box-shadow: 0px 2px 6px 0px #4F617B14;
     padding: 18px;
-    border-color: none;
-    border-width: 0;
-    /* margin-top: 8px; */
+    border: 1px solid #FFFFFF;
+}
+
+.card:hover {
+    border: 1px solid rgba(255, 151, 81, 1);
+    box-shadow: 2px 8px 24px 0px #4F617B26;
 }
 
 .title {
@@ -21,7 +23,6 @@
     margin: 0px 13px;
 }
 
-
 .point {
     align-items: center;
     display: flex;
@@ -33,13 +34,12 @@
 }
 
 .divider {
-    border-top: 1px solid #D9D9D9;
     background: #D9D9D9;
+    height: 1px;
     box-shadow: none;
-    margin: 10px 0px;
-
+    margin-top: 10px;
+    margin-bottom: 14px;
 }
-
 
 .time-comment {
     align-items: center;
@@ -56,10 +56,11 @@
     justify-content: start;
     background: #FFEADC;
     border-radius: 6px;
-    padding: 8px 10px;
+    padding: 0px 10px;
     color: #FF6600;
     font-weight: 600;
     cursor: pointer;
+    height: 32px;
 }
 
 .trending-chip {
@@ -71,10 +72,10 @@
     margin-left: 16px;
 }
 
-.icon{
+.icon {
     font-size: 14px;
     margin-right: 6px;
-    
+
 }
 
 .flex-start {
@@ -91,7 +92,6 @@
 
 .modal {
     background: rgba(79, 97, 123, 0.5);
-
 }
 
 .modal-dialog {
@@ -115,7 +115,7 @@
 
 .modal-contents-container {
     height: 592px;
-    padding-bottom: 30px;
+    padding-bottom: 32px;
 }
 
 

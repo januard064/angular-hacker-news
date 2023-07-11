@@ -1,3 +1,6 @@
+.comment-list-container{
+    margin-bottom: 16px;
+}
 
 .comment-list-content {
     background-color: #F4F4F4;
@@ -5,7 +8,6 @@
     border-radius: 6px;
     color: #242424;
     font-size: 14px;
-    margin-top: 16px;
 }
 
 .comment-title {
